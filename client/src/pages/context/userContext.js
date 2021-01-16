@@ -1,0 +1,25 @@
+import React, { createContext, useReducer } from "react";
+
+const userReducer = (state, action) => {
+  switch (action.type) {
+    case "GET_USERS":
+      return { ...state, users: action.payload };
+    default:
+      return state;
+  }
+};
+
+const init = {
+  users: null,
+};
+
+const UserContext = createContext();
+
+const UserProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(userReducer, init);
+
+  const value = { state, dispatch };
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+};
+
+export { UserContext, UserProvider };

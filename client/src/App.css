@@ -1,0 +1,37 @@
+body
+{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App
+{
+  display: grid;
+  grid-template-rows: minmax(auto, 50px) minmax(auto, 500px) minmax(auto, 50px);
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.App > *
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.admin-create > div
+{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  width: 20rem;
+}
+
+.message
+{
+  color: red;
+}
